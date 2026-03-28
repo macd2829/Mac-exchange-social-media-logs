@@ -1,0 +1,538 @@
+Here is a complete, ready-to-run HTML document that create
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mac Exchange | Social Media Accounts & Rental Numbers</title>
+  <!-- Google Fonts & Smooth Scroll -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #f6f9fc 0%, #eef2f5 100%);
+      color: #1a2c3e;
+      line-height: 1.4;
+      scroll-behavior: smooth;
+    }
+
+    /* modern glassmorphism touches */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+    }
+
+    /* header */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(0,0,0,0.05);
+    }
+
+    .logo h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1E3C72, #2A5298);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .logo p {
+      font-size: 0.85rem;
+      color: #4a627a;
+      font-weight: 500;
+    }
+
+    .cta-whatsapp {
+      background: #25D366;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      box-shadow: 0 4px 10px rgba(37,211,102,0.3);
+    }
+    .cta-whatsapp:hover {
+      background: #128C7E;
+      transform: scale(1.02);
+      box-shadow: 0 8px 18px rgba(37,211,102,0.4);
+    }
+
+    /* hero section */
+    .hero {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f2b3d;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-top: 0.75rem;
+      color: #2c4c6e;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* section titles */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 2rem 0 1.2rem 0;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: #2A5298;
+      border-radius: 3px;
+    }
+
+    /* social cards grid */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .social-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.6rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.05);
+      cursor: pointer;
+      text-align: center;
+    }
+    .social-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+      border-color: rgba(42,82,152,0.3);
+    }
+
+    .icon {
+      font-size: 3.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .social-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .social-card .desc {
+      color: #4b6b8a;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .price-badge {
+      background: #eef2ff;
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #1e4a76;
+    }
+    .whatsapp-link-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #075e54;
+      color: white;
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .whatsapp-link-btn:hover {
+      background: #25D366;
+    }
+
+    /* countries & rent numbers combined region */
+    .countries-rent-section {
+      background: white;
+      border-radius: 2rem;
+      padding: 1.8rem 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+    }
+
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .country-list, .rent-list {
+      flex: 1;
+      min-width: 240px;
+    }
+    .country-list h3, .rent-list h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.5rem;
+    }
+    .country-badge {
+      background: #eef2fa;
+      padding: 0.5rem 1.1rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: 0.1s;
+      border: 1px solid #dce5ef;
+    }
+    .rent-number-card {
+      background: #f8fafd;
+      border-radius: 1rem;
+      padding: 0.9rem 1.2rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-left: 4px solid #25D366;
+    }
+    .rent-number-card span {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #1f3b4c;
+    }
+    .rent-btn {
+      background: #25D366;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: 0.2s;
+    }
+    .rent-btn:hover {
+      background: #128C7E;
+    }
+    .small-note {
+      font-size: 0.75rem;
+      color: #5f7f9c;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      color: #4e6e8c;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 1rem;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+      .section-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header with logo & direct whatsapp -->
+  <div class="header">
+    <div class="logo">
+      <h1>MAC EXCHANGE</h1>
+      <p>premium social accounts · virtual numbers</p>
+    </div>
+    <a href="https://wa.me/message/4CQ6HWW6KJ3PD1" target="_blank" class="cta-whatsapp">
+      💬 24/7 Support on WhatsApp
+    </a>
+  </div>
+
+  <!-- Hero section -->
+  <div class="hero">
+    <h2>⚡ Trusted Marketplace for Social Media & Rentals</h2>
+    <p>Buy aged & verified Facebook, Instagram, Twitter accounts. Rent real phone numbers from USA, Europe & more. <br>Click any card or rental → instant chat on WhatsApp.</p>
+  </div>
+
+  <!-- SOCIAL MEDIA PURCHASE SECTION -->
+  <div>
+    <h2 class="section-title">📱 Buy Social Media Accounts</h2>
+    <div class="grid-cards" id="socialCardsContainer">
+      <!-- Facebook Card -->
+      <div class="social-card" data-wa="https://wa.me/message/4CQ6HWW6KJ3PD1?text=Hello%20Mac%20Exchange%2C%20I%20want%20to%20buy%20a%20FACEBOOK%20account">
+        <div class="icon">📘</div>
+        <h3>Facebook</h3>
+        <div class="desc">Aged profiles, business ready, verified & secure</div>
+        <div class="price-badge">from $19 ➜ DM</div>
+        <div class="whatsapp-link-btn">💬 Inquire on WhatsApp</div>
+      </div>
+      <!-- Instagram Card -->
+      <div class="social-card" data-wa="https://wa.me/message/4CQ6HWW6KJ3PD1?text=Hello%20Mac%20Exchange%2C%20I%20want%20to%20buy%20an%20INSTAGRAM%20account">
+        <div class="icon">📸</div>
+        <h3>Instagram</h3>
+        <div class="desc">High followers, OG usernames, thematic pages</div>
+        <div class="price-badge">from $25 ➜ DM</div>
+        <div class="whatsapp-link-btn">💬 Inquire on WhatsApp</div>
+      </div>
+      <!-- Twitter Card -->
+      <div class="social-card" data-wa="https://wa.me/message/4CQ6HWW6KJ3PD1?text=Hello%20Mac%20Exchange%2C%20I%20want%20to%20buy%20a%20TWITTER%20%28X%29%20account">
+        <div class="icon">🐦</div>
+        <h3>Twitter (X)</h3>
+        <div class="desc">Established 2015+, high credibility accounts</div>
+        <div class="price-badge">from $22 ➜ DM</div>
+        <div class="whatsapp-link-btn">💬 Inquire on WhatsApp</div>
+      </div>
+      <!-- TikTok Card extra -->
+      <div class="social-card" data-wa="https://wa.me/message/4CQ6HWW6KJ3PD1?text=Hello%20Mac%20Exchange%2C%20I%20want%20to%20buy%20a%20TIKTOK%20account">
+        <div class="icon">🎵</div>
+        <h3>TikTok</h3>
+        <div class="desc">Viral ready, followers & verified badges</div>
+        <div class="price-badge">from $35 ➜ DM</div>
+        <div class="whatsapp-link-btn">💬 Inquire on WhatsApp</div>
+      </div>
+      <!-- YouTube (bonus) -->
+      <div class="social-card" data-wa="https://wa.me/message/4CQ6HWW6KJ3PD1?text=Hello%20Mac%20Exchange%2C%20I%20want%20to%20buy%20a%20YOUTUBE%20channel">
+        <div class="icon">▶️</div>
+        <h3>YouTube</h3>
+        <div class="desc">Monetized channels, custom URLs</div>
+        <div class="price-badge">from $49 ➜ DM</div>
+        <div class="whatsapp-link-btn">💬 Inquire on WhatsApp</div>
+      </div>
+      <!-- LinkedIn -->
+      <div class="social-card" data-wa="https://wa.me/message/4CQ6HWW6KJ3PD1?text=Hello%20Mac%20Exchange%2C%20I%20want%20to%20buy%20a%20LINKEDIN%20account">
+        <div class="icon">🔗</div>
+        <h3>LinkedIn</h3>
+        <div class="desc">Professional network, premium profiles</div>
+        <div class="price-badge">from $30 ➜ DM</div>
+        <div class="whatsapp-link-btn">💬 Inquire on WhatsApp</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Countries (USA, European, foreign) + Rent Numbers section combined -->
+  <div class="countries-rent-section">
+    <div class="two-columns">
+      <!-- LEFT: Countries we serve -->
+      <div class="country-list">
+        <h3>🌍 Available Countries</h3>
+        <div class="badge-container" id="countriesList"></div>
+        <p class="small-note" style="margin-top:12px">✅ Accounts & numbers from these regions ready for instant delivery.</p>
+      </div>
+
+      <!-- RIGHT: Rent Numbers (Click to WhatsApp) -->
+      <div class="rent-list">
+        <h3>📞 Rent a Number</h3>
+        <div id="rentNumbersContainer"></div>
+        <p class="small-note">🔁 Flexible rental periods — OTP, verification, temporary use. Click any number to chat on WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Mac Exchange — All transactions secured via WhatsApp business. Instant support 24/7. <br> 
+    <strong>Click any account or rental button → direct WhatsApp conversation.</strong></p>
+  </footer>
+</div>
+
+<script>
+  // ---------- WHATSAPP MASTER LINK ----------
+  const MASTER_WA = "https://wa.me/message/4CQ6HWW6KJ3PD1";
+
+  // ========= 1. COUNTRIES (USA + European countries + extra foreign) =========
+  const countriesArray = [
+    "🇺🇸 United States", "🇬🇧 United Kingdom", "🇩🇪 Germany", "🇫🇷 France", 
+    "🇮🇹 Italy", "🇪🇸 Spain", "🇳🇱 Netherlands", "🇧🇪 Belgium", "🇵🇹 Portugal",
+    "🇨🇭 Switzerland", "🇦🇹 Austria", "🇸🇪 Sweden", "🇳🇴 Norway", "🇩🇰 Denmark",
+    "🇫🇮 Finland", "🇵🇱 Poland", "🇨🇿 Czech Republic", "🇮🇪 Ireland",
+    "🇦🇪 UAE", "🇨🇦 Canada", "🇦🇺 Australia", "🇯🇵 Japan", "🇧🇷 Brazil"
+  ];
+
+  // ========= 2. RENT NUMBERS (with country flags and details, each click redirects to WA with custom message) =========
+  const rentNumbers = [
+    { id: 1, country: "🇺🇸 USA", number: "+1 (305) 555-4RENT", hint: "Virtual number · SMS capable" },
+    { id: 2, country: "🇬🇧 UK", number: "+44 7700 123XYZ", hint: "OTP / verification ready" },
+    { id: 3, country: "🇩🇪 Germany", number: "+49 151 2345678", hint: "High privacy rental" },
+    { id: 4, country: "🇫🇷 France", number: "+33 7 56 89 10XX", hint: "Temporary number" },
+    { id: 5, country: "🇪🇸 Spain", number: "+34 612 345 678", hint: "WhatsApp compatible" },
+    { id: 6, country: "🇮🇹 Italy", number: "+39 331 2345678", hint: "Premium rental" },
+    { id: 7, country: "🇨🇦 Canada", number: "+1 647 555 0RENT", hint: "Reliable for verifications" },
+    { id: 8, country: "🇦🇪 Dubai/UAE", number: "+971 50 123 4567", hint: "Business ready" }
+  ];
+
+  // function to open WhatsApp with pre-filled message based on context
+  function openWhatsApp(contextMessage) {
+    let encodedMsg = encodeURIComponent(contextMessage);
+    // using master wa.me/message link but adding custom text via ?text= for better experience.
+    // However since link is a message link (wa.me/message/xxx), adding ?text works too.
+    // but to be safe we open the main wa chat with custom text. The official wa.me/message links 
+    // also accept text parameter. So perfect.
+    window.open(`${MASTER_WA}?text=${encodedMsg}`, '_blank');
+  }
+
+  // Helper to attach click events to any element that needs to redirect to WhatsApp
+  function attachWAClick(element, customMsg) {
+    element.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openWhatsApp(customMsg);
+    });
+  }
+
+  // Render Countries Badges (just visual, but we also want when clicking a country to open WhatsApp?
+  // the requirement: "whenever someone clicks on any social media its take them to my WhatsApp"
+  // Also for countries we can make them interactive: clicking on a country shows interest for purchasing account from that region.
+  // To make it more useful, we'll allow clicking on any country badge -> sends message like "I'm interested in accounts from [Country]"
+  function renderCountries() {
+    const container = document.getElementById('countriesList');
+    if (!container) return;
+    container.innerHTML = '';
+    countriesArray.forEach(country => {
+      const badge = document.createElement('div');
+      badge.className = 'country-badge';
+      badge.textContent = country;
+      // style pointer for click
+      badge.style.cursor = 'pointer';
+      badge.style.transition = '0.1s';
+      badge.addEventListener('mouseenter', () => badge.style.transform = 'scale(1.02)');
+      badge.addEventListener('mouseleave', () => badge.style.transform = 'scale(1)');
+      // on click, send WhatsApp with inquiry about that country
+      const countryNameClean = country.replace(/[🇺🇸🇬🇧🇩🇪🇫🇷🇮🇹🇪🇸🇳🇱🇧🇪🇵🇹🇨🇭🇦🇹🇸🇪🇳🇴🇩🇰🇫🇮🇵🇱🇨🇿🇮🇪🇦🇪🇨🇦🇦🇺🇯🇵🇧🇷]/g, '').trim();
+      attachWAClick(badge, `Hello Mac Exchange, I'm interested in social media accounts or rental numbers from ${countryNameClean}. Please share available options.`);
+      container.appendChild(badge);
+    });
+  }
+
+  // Render Rent Numbers with clickable buttons
+  function renderRentNumbers() {
+    const container = document.getElementById('rentNumbersContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    rentNumbers.forEach(rent => {
+      const card = document.createElement('div');
+      card.className = 'rent-number-card';
+      
+      const infoDiv = document.createElement('div');
+      infoDiv.style.display = 'flex';
+      infoDiv.style.flexDirection = 'column';
+      infoDiv.style.gap = '4px';
+      infoDiv.innerHTML = `
+        <span style="font-weight:800;">${rent.country} · ${rent.number}</span>
+        <span style="font-size:0.7rem; color:#5e7f9e;">${rent.hint}</span>
+      `;
+      
+      const rentBtn = document.createElement('button');
+      rentBtn.className = 'rent-btn';
+      rentBtn.textContent = '📲 Rent now → WhatsApp';
+      
+      // on button click: open WhatsApp with rent inquiry
+      const inquiryMsg = `Hi Mac Exchange, I want to rent a number: ${rent.country} ${rent.number} (${rent.hint}). Please provide details & pricing.`;
+      attachWAClick(rentBtn, inquiryMsg);
+      
+      card.appendChild(infoDiv);
+      card.appendChild(rentBtn);
+      container.appendChild(card);
+    });
+  }
+
+  // Attach WhatsApp click to all social cards (with dynamic pre-filled message)
+  function bindSocialCards() {
+    const cards = document.querySelectorAll('.social-card');
+    cards.forEach(card => {
+      // get the social media title from h3
+      const titleElem = card.querySelector('h3');
+      let platform = titleElem ? titleElem.innerText : 'Social Media Account';
+      // custom message
+      const message = `Hello Mac Exchange, I'm interested in purchasing a ${platform} account. Please share details, prices and availability.`;
+      // clicking anywhere on the card triggers WhatsApp
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        // avoid double trigger if clicked on inner button? but inner button already has own handler, but we can prevent event from card if needed.
+        // but it's fine, the button inside has its own listener and we use stopPropagation? attachWAClick already stops propagation?
+        // the attachWAClick used on rent-btn stops propagation, but social cards don't have inner button with same risk.
+        // to avoid any conflict we can check if target is .whatsapp-link-btn or rent-btn? but rent button is separate.
+        // but for social card, if someone clicks on the inner "whatsapp-link-btn", that button also has a click listener that we will attach now.
+        // we should attach also for that button but avoid double call. Let's handle gracefully.
+        // we first attach card click but if user clicks button, we will also have card click. To prevent that, we can detect.
+        // let's add an extra safe check: 
+        if (e.target.closest('.rent-btn')) return; // rent button not inside social card, ignore
+        // also inside social card we might have .whatsapp-link-btn but we can also create a separate listener for it to have same message.
+        // for simplicity, we will also attach click for the .whatsapp-link-btn inside each card with its own message and stop propagation.
+        if (e.target.closest('.whatsapp-link-btn')) {
+          // it will be handled by separate listener, we just return to avoid duplicate.
+          return;
+        }
+        openWhatsApp(message);
+      });
+      
+      // additionally, ensure the inner .whatsapp-link-btn also sends same style message and does not bubble
+      const innerBtn = card.querySelector('.whatsapp-link-btn');
+      if (innerBtn) {
+        innerBtn.style.cursor = 'pointer';
+        innerBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openWhatsApp(message);
+        });
+      }
+    });
+  }
+
+  // Also add header whatsapp button direct (already has href) but we want any click to open chat with generic support?
+  // But we also want make sure all external links open the message link correctly. For header button it's direct.
+  // Add some safety to override any missing behaviour on direct wa.me links: but it's fine.
+
+  // Additional touch: we also want to make sure that any country click, rent number click is working as defined.
+  // All rent numbers already have rentBtn that uses attachWAClick. Countries are attached in renderCountries.
+
+  // Initialize everything on page load
+  function init() {
+    renderCountries();
+    renderRentNumbers();
+    bindSocialCards();
+    // For any direct link that uses cta-whatsapp, we ensure it opens main message (already href is correct)
+    // Also provide global click for "Rent Numbers" section to be extra friendly: all good.
+    // Additionally, to satisfy "add rent number available for rent when someone clicks it going to my WhatsApp"
+    // We already did: each rent number card has dedicated button, and cl
